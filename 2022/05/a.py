@@ -15,10 +15,11 @@ move 1 from 1 to 2
 """
 
 def parse():
-    stks = [deque()]
+    stks = []
     instrs = []
 
     read_stks = False
+
     for line in sys.stdin:
         if not line.strip():
             continue
@@ -34,11 +35,11 @@ def parse():
             continue
 
         for i in range(0, len(line), 4):
-            stack_no = i // 4
             part = line[i:i+4].strip()
             if len(part) == 0:
                 continue
             
+            stack_no = i // 4
             while len(stks) <= stack_no:
                 stks.append(deque())
 
