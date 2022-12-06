@@ -14,6 +14,7 @@ move 2 from 2 to 1
 move 1 from 1 to 2
 """
 
+
 def parse():
     stks = []
     instrs = []
@@ -24,8 +25,8 @@ def parse():
         if not line.strip():
             continue
 
-        if line[1] == '1':
-            read_stks = True 
+        if line[1] == "1":
+            read_stks = True
             assert len(stks) == int(line[-3])
             continue
 
@@ -35,10 +36,10 @@ def parse():
             continue
 
         for i in range(0, len(line), 4):
-            part = line[i:i+4].strip()
+            part = line[i : i + 4].strip()
             if len(part) == 0:
                 continue
-            
+
             stack_no = i // 4
             while len(stks) <= stack_no:
                 stks.append(deque())
@@ -48,6 +49,7 @@ def parse():
 
     return stks, instrs
 
+
 def part1(stks, instrs):
     stks = copy.deepcopy(stks)
     for m, f, t in instrs:
@@ -56,7 +58,8 @@ def part1(stks, instrs):
         for _ in range(m):
             pop = stks[f].pop()
             stks[t].append(pop)
-    return ''.join(stk[-1] for stk in stks)
+    return "".join(stk[-1] for stk in stks)
+
 
 def part2(stks, instrs):
     stks = copy.deepcopy(stks)
@@ -69,9 +72,9 @@ def part2(stks, instrs):
             popped.append(pop)
         for pop in reversed(popped):
             stks[t].append(pop)
-    return ''.join(stk[-1] for stk in stks)
+    return "".join(stk[-1] for stk in stks)
+
 
 stks, instrs = parse()
 print(part1(stks, instrs))
 print(part2(stks, instrs))
-

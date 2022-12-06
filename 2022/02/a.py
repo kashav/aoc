@@ -6,6 +6,7 @@ LOSS = 0
 DRAW = 3
 WIN = 6
 
+
 def is_win(a, b):
     if a == ROCK and b == PAPER:
         return True
@@ -18,14 +19,8 @@ def is_win(a, b):
 
     return False
 
-L = {
-        "A": ROCK,
-        "B": PAPER,
-        "C": SCISSORS,
-        "X": ROCK,
-        "Y": PAPER,
-        "Z": SCISSORS
-}
+
+L = {"A": ROCK, "B": PAPER, "C": SCISSORS, "X": ROCK, "Y": PAPER, "Z": SCISSORS}
 
 with open("input", "r+") as fi:
     score = 0

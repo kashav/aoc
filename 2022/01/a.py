@@ -2,7 +2,7 @@ with open("input", "r+") as input_:
     cals = [0]
     big_n, big_i = -1, -float("inf")
     for line in input_:
-        if line == '\n':
+        if line == "\n":
             if cals[-1] > big_n:
                 big_n = cals[-1]
                 big_i = len(cals)

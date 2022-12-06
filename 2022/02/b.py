@@ -6,14 +6,8 @@ LOSS = 0
 DRAW = 3
 WIN = 6
 
-L = {
-        "A": ROCK,
-        "B": PAPER,
-        "C": SCISSORS,
-        "X": LOSS,
-        "Y": DRAW,
-        "Z": WIN
-}
+L = {"A": ROCK, "B": PAPER, "C": SCISSORS, "X": LOSS, "Y": DRAW, "Z": WIN}
+
 
 def my_move(op, oc):
     if oc == DRAW:
@@ -33,6 +27,7 @@ def my_move(op, oc):
         return ROCK
     if op == ROCK:
         return SCISSORS
+
 
 with open("input", "r+") as fi:
     score = 0
